@@ -1,0 +1,32 @@
+
+<div id="container">
+    <div id="movie-list">
+        <p-dataView [value]="movies" [loading]="isLoading" [paginator]="true" [rows]="20" [lazy]="true" (onLazyLoad)="loadMovies($event)" [totalRecords]="totalRecords">
+            <ng-template let-movie pTemplate="listItem">
+                <app-movie-card [title]="movie.title">
+                    <a [routerLink]="['/movies', movie.id]" image> 
+                        <img [style]="{'width': '100%'}" src="https://image.tmdb.org/t/p/original/{{movie.poster}}" [alt]="movie.title"/>
+                    </a>
+                    <div info>
+                        <div class="movie-overview">{{movie.overview}}</div>
+                        <div class="grid movie-metadata">
+                            <div class="col-7 movie-release-date">
+                                Release: {{movie.releaseDate | date: 'mediumDate' }}
+                            </div>
+                            <div class="col-5 movie-language">
+                                Language: <img alt="Language" width="30" src='https://unpkg.com/language-icons/icons/{{movie.language}}.svg' />
+                            </div>
+                        </div>
+                        <div>
+                            <p-rating [(ngModel)]="movie.vote" [cancel]="false" [readonly]="true" [stars]="10"></p-rating>
+                        </div>
+                    </div>
+                </app-movie-card>
+            </ng-template>
+        </p-dataView>
+    </div>
+
+    <p-blockUI [blocked]="isLoading">
+        <p-progressSpinner strokeWidth="2" animationDuration=".5s"></p-progressSpinner>
+    </p-blockUI>
+</div>

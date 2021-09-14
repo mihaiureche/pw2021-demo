@@ -1,0 +1,31 @@
+#movie-list {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+
+    .movie-overview {
+        margin-top: 10px;
+        font-size: 1rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .movie-metadata {
+        margin-top: 10px;
+
+        .movie-release-date {
+            margin-top: 10px;
+            font-weight: bold;
+            color: red;
+        }
+    
+        .movie-language {
+            display: flex;
+            justify-content: right;
+            align-items: center;
+    
+            img {
+                margin-left: 5px;
+            }
+        }
+    }
+}
