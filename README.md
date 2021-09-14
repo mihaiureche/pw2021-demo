@@ -1,27 +1,24 @@
-# Pw2021Demo
+# Prerequisite
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+- git
+- NodeJs 14.x
+- npm 6.x
 
-## Development server
+# Clone code
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+In order to start the application you will need to clone first the code using HTTP or SSH. 
 
-## Code scaffolding
+# Start application
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+In order to start the application you will need to go to the root folder and run the following commands.
 
-## Build
+- `npm install`
+- `npm run start`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Once you run this commands you will be able to access either directly the movies mfe using the following url `http://localhost:4200` or to access the shell app using the url provided above.
 
-## Running unit tests
+# Connect to the Movies API
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+In order to get results from the `themoviedb.org` you will need to get an API key which you should use it into the application. Follow the steps from the website https://developers.themoviedb.org/3/getting-started/introduction in order to get an API key.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Once you have the API key you will need to open the service file from the following location `/src/infrastructure/services/movie.service.ts` and put the API key into the `movieApiKey` property.
